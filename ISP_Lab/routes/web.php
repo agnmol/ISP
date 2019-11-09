@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/clients', 'CustomersController@index');
+Route::get('/jobs', 'JobsController@index');
+Route::get('/jobs/booked', 'BookedJobsController@index');
+Route::get('/restaurant', 'RestaurantController@index');
+Route::get('/services', 'ServicesController@index');
+Route::get('/workers', 'WorkersController@index');
