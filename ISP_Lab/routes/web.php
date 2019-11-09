@@ -18,3 +18,5 @@ Route::get('/jobs/booked', 'BookedJobsController@index');
 Route::get('/restaurant', 'RestaurantController@index');
 Route::get('/services', 'ServicesController@index');
 Route::get('/workers', 'WorkersController@index');
+Route::get('/rooms', 'RoomsController@index');
+Route::get('/rooms/free', 'RoomsController@index');
