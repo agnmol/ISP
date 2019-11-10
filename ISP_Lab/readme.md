@@ -1,8 +1,8 @@
 
 Po parsisiuntimo įvykdyti komandas:
 
-composer update
-composer install
+<p>composer update</p>
+<p>composer install</p>
 
 
 
