@@ -9,6 +9,7 @@
                 <th>Priskirtas</th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
             <tr>
                 <td>Alfreds Futterkiste</td>
@@ -21,6 +22,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Berglunds snabbköp</td>
@@ -33,6 +35,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Centro comercial Moctezuma</td>
@@ -45,6 +48,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Ernst Handel</td>
@@ -57,6 +61,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Island Trading</td>
@@ -69,6 +74,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Königlich Essen</td>
@@ -81,6 +87,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Laughing Bacchus Winecellars</td>
@@ -93,6 +100,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Magazzini Alimentari Riuniti</td>
@@ -105,6 +113,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>North/South</td>
@@ -117,6 +126,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
             <tr>
                 <td>Paris spécialités</td>
@@ -129,6 +139,7 @@
                 </td>
                 <td><button class="btn">Baigtas</button></td>
                 <td><button class="btn">Siųsti priminimą</button></td>
+                <td><button class="btn">Redaguoti</button></td>
             </tr>
         </table>
     </div>
