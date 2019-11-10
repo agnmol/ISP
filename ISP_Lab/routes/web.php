@@ -1,23 +1,25 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', 'HomeController@index');
 Route::get('/clients', 'CustomersController@index');
+
 Route::get('/jobs', 'JobsController@index');
 Route::get('/jobs/add', 'AddJobController@index');
-Route::get('/jobs/booked', 'BookedJobsController@index');
+
 Route::get('/restaurant', 'RestaurantController@index');
+Route::get('/restaurant/add', 'AddToMenuController@index');
+Route::get('/restaurant/book', 'TableReservationController@index');
+
 Route::get('/services', 'ServicesController@index');
+Route::get('/services/add', 'AddServiceController@index');
+
 Route::get('/workers', 'WorkersController@index');
+Route::get('/workers/add', 'AddWorkerController@index');
+
 Route::get('/rooms', 'RoomsController@index');
 Route::get('/rooms/free', 'RoomsController@index');
+Route::get('/rooms/reservations', 'RoomsReservationsController@index');
+Route::get('/reports/', 'servicesReportController@index');
+Route::get('/reports/services', 'servicesReportController@index');
+Route::get('/reports/restaurant', 'restaurantReportController@index');
+Route::get('/reports/reservations', 'reservationsReportController@index');
