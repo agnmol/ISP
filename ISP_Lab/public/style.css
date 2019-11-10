@@ -1,0 +1,282 @@
+@CHARSET "UTF-8";
+
+body {
+    margin: 0px;
+    color: #8A8985; /* teksto spalva */
+    font-family: Arial, Helvetica, sans-serif; /* šriftas */
+    font-size: 12px; /* teksto dydis */
+    background-color: #e3e3e3;
+}
+
+a {
+    color: #414547;
+}
+
+/* pagrindinis puslapio blokas */
+#body {
+    width: auto;
+    margin: 0px auto; /* bloko centravimas puslapio viduje */
+
+}
+
+/* viršutinė puslapio dalis */
+#header {
+    width: 100%;
+    height: 90px;
+    background-color: #cccccc;
+    border: 1px solid silver; /* rėmelis */
+    float: left;
+}
+
+#slogan {
+    text-align: center;
+    color: #25292B;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+
+/* turinio blokelis */
+#content {
+    width: 100%;
+    background-color: #fff;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    float: left;
+    position: relative;
+}
+
+/* pagrindinio meniu blokelis */
+#topMenu {
+    overflow: hidden;
+    margin-bottom: 2em;
+    background: #25292B;
+    height: 50px;
+}
+
+#topMenu ul {
+    margin: 0;
+    list-style: none;
+    line-height: normal;
+    text-align: center;
+}
+
+#topMenu li {
+    display: inline-block;
+}
+
+#topMenu li a {
+    display: block;
+    letter-spacing: 1px;
+    line-height: 50px;
+    padding: 0 40px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.80em;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#topMenu li a:hover {
+    text-decoration: underline; /* nustatome nuorodos pabraukimą užvedus pele */
+}
+
+#topMenu li a.active {
+    background: #8A8985;
+}
+
+
+
+/* kairysis puslapio blokelis */
+#contentLeft {
+    width: 20%;
+    float: left; /* blokelio pozicija */
+    padding-bottom: 40px;
+}
+
+#contentLeft li {
+
+    line-height: 25px;
+    list-style: none;
+}
+
+#contentLeft li a {
+    display: block;
+    text-decoration: none;
+    margin-left: 5px;
+    border-bottom: 1px solid silver;
+}
+
+#contentLeft li a:hover {
+    text-decoration: underline;
+}
+
+#contentLeft li a.active {
+    background: #FFC31F;
+}
+
+#contentLeft ul {
+    padding-inline-start: 20px;
+}
+
+#contentLeft h2 {
+    border-bottom: 1px solid #484646;
+    font-size: 15px;
+    font-weight: normal;
+    color: #25292B;
+    letter-spacing: 0.2px;
+    margin: 10px 0px 0px 10px;
+    text-transform: uppercase;
+}
+
+
+/* turinio blokelis */
+#contentRight {
+    width: 79%;
+    min-height: 470px; /* minimalus blokelio aukštis */
+    border-left: 1px solid silver;
+    float: left; /* blokelio pozicija */
+    padding-bottom: 40px;
+}
+
+h2#pageTitle {
+    font-size: 26px;
+    margin: 10px 0px 20px 50px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #FFC31F;
+}
+
+.Item {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #6E6E6E;
+    width: 150px;
+    height: 200px;
+    border-radius: 15px;
+    float: left;
+    margin-left: 5px;
+}
+
+.Item .title {
+    height:40px;
+    text-align: center;
+}
+
+.Item .description {
+    margin: 10px 5px 10px 10px
+}
+
+#contentRight p {
+    /*	margin-left: 15px;
+        margin-right: 15px;*/
+}
+
+
+/* apatinė puslapio dalis */
+#footer {
+    width: 100%;
+    height: 40px;
+    border: 1px solid silver;
+    bottom: 0;
+    background-color: #6E6E6E;
+    clear: both;
+    position: relative;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: auto;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin-right: 200px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #383d41;
+    color: white;
+}
+
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#filter {
+    margin-left: 50px;
+    padding-bottom: 20px;
+}
+
+#contentRight input[type=text], select {
+    width: auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+
+#contentRight input[type=submit] {
+    background-color: DodgerBlue;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    float: right;
+    margin-right: 45%;
+}
+
+#contentRight input[type=submit]:hover {
+    background-color: #00b0e8;
+}
+
+#contentRight .row {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+}
+
+#contentRight .leftcol {
+    float: left;
+    width: 10%;
+    margin-top: 6px;
+    margin-left: 50px;
+}
+
+#contentRight .rightcol {
+    float: left;
+    margin-right: 10%;
+    margin-left: 5%;
+    margin-top: 6px;
+}
+
+#contentRight .about{
+    height: 200px;
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#contentRight .field{
+    width: auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
