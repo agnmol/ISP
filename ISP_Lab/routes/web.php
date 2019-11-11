@@ -1,6 +1,8 @@
 <?php
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'LoginController@index');
+Route::get('/register', 'RegisterController@index');
+Route::get('/home', 'HomeController@index');
 Route::get('/clients', 'CustomersController@index');
 
 Route::get('/jobs', 'JobsController@index');

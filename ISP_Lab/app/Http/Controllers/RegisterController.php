@@ -8,6 +8,6 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('layouts.register');
+        return view('mainLayouts.register');
     }
 }
