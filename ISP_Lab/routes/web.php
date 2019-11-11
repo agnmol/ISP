@@ -14,6 +14,7 @@ Route::get('/restaurant/book', 'TableReservationController@index');
 
 Route::get('/services', 'ServicesController@index');
 Route::get('/services/add', 'AddServiceController@index');
+Route::get('/services/booked', 'BookedServicesController@index');
 
 Route::get('/workers', 'WorkersController@index');
 Route::get('/workers/add', 'AddWorkerController@index');

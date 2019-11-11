@@ -20,27 +20,31 @@
                 <th>Balkonas</th>
                 <th>Rūkančiųjų zonoje</th>
                 <th></th>
+                <th></th>
             </tr>
             <tr>
                 <td>Alfreds Futterkiste</td>
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
             </tr>
             <tr>
                 <td>Berglunds snabbköp</td>
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
             </tr>
             <tr>
                 <td>Centro comercial Moctezuma</td>
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -48,7 +52,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -56,7 +61,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -64,7 +70,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -72,7 +79,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -80,7 +88,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
 
@@ -90,7 +99,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -98,7 +108,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -106,7 +117,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -114,7 +126,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -122,7 +135,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -130,7 +144,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -138,7 +153,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -146,7 +162,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -154,7 +171,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -162,7 +180,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -170,7 +189,8 @@
                 <td>100000</td>
                 <td>taip</td>
                 <td>ne</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
         </table>
