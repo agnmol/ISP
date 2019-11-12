@@ -20,7 +20,8 @@ Route::get('/workers', 'WorkersController@index');
 Route::get('/workers/add', 'AddWorkerController@index');
 
 Route::get('/rooms', 'RoomsController@index');
-Route::get('/rooms/free', 'RoomsController@index');
+//Route::get('/rooms/free', 'FreeRoomsController@index');
+Route::get('/rooms/user-reservations', 'UserRoomsReservationsController@index');
 Route::get('/rooms/reservations', 'RoomsReservationsController@index');
 Route::get('/reports/', 'servicesReportController@index');
 Route::get('/reports/services', 'servicesReportController@index');

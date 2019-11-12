@@ -1,9 +1,19 @@
 @extends('mainLayouts.home')
 @include('layouts.rooms')
 @section('right')
-    <div id="contentRight">
+        <div id="contentRight">
+        <div id="data">
+            <h2> data: </h2>
+
+            <select>
+                <option value="true">Data1</option>
+                <option value="false">Data2</option>
+            </select>
+
+        </div>
         <div id="filter">
         <h2> filtrai: </h2>
+
             <select>
                 <option value="true">Filtras1</option>
                 <option value="false">Filtras1</option>
@@ -13,6 +23,8 @@
                 <option value="false">Filtras2</option>
             </select>
         </div>
+
+            <button type="button">Ieškoti</button>
         <table id="customers">
             <tr>
                 <th>Kambario tipas</th>
@@ -28,7 +40,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
             </tr>
             <tr>
                 <td>Berglunds snabbköp</td>
@@ -36,7 +47,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
             </tr>
             <tr>
                 <td>Centro comercial Moctezuma</td>
@@ -44,7 +54,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -53,7 +62,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -62,7 +70,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -71,7 +78,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -80,7 +86,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -89,7 +94,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
 
@@ -100,7 +104,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -109,7 +112,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -118,7 +120,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -127,7 +128,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -136,7 +136,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -145,7 +144,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -154,7 +152,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -163,7 +160,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -172,7 +168,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -181,7 +176,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
             <tr>
@@ -190,7 +184,6 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Rezervuoti</button></td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
 
             </tr>
         </table>
