@@ -9,6 +9,7 @@
                 <th>Balkonas</th>
                 <th>Rūkančiųjų zonoje</th>
                 <th></th>
+                <th></th>
 
             </tr>
             <tr>
@@ -17,6 +18,7 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Įvertinti</button></td>
+                <td><button onclick="" class="btn">Šalinti</button></td>
             </tr>
             <tr>
                 <td>Berglunds snabbköp</td>
@@ -24,6 +26,7 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Įvertinti</button></td>
+                <td><button onclick="" class="btn">Šalinti</button></td>
             </tr>
             <tr>
                 <td>Centro comercial Moctezuma</td>
@@ -31,6 +34,7 @@
                 <td>taip</td>
                 <td>ne</td>
                 <td><button onclick="" class="btn">Įvertinti</button></td>
+                <td><button onclick="" class="btn">Šalinti</button></td>
 
             </tr>
 
