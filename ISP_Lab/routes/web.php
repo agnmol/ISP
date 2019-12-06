@@ -28,10 +28,14 @@ Route::get('/workers/edit/{id}', 'WorkersController@editWorker')->name('editWork
 Route::post('/workers/edit/confirm/{id}', 'WorkersController@insertWorker')->name('confirmEditWorker');
 
 Route::get('/rooms', 'RoomsController@index');
-Route::get('/rooms/reservations', 'RoomsController@reservations');
+Route::get('/rooms/reservations', 'RoomsController@reservations')->name('roomReservations');
+Route::get('/rooms/reservations/edit/{id}', 'RoomsController@editReservation')->name('editReservation');
+Route::post('/rooms/reservations/edit/confirm/{id}', 'RoomsController@confirmEditReservation')->name('confirmEditReservation');
 Route::get('/rooms/reservations/confirm/{id}', 'RoomsController@confirm')->name('confirmReservation');
 //Route::get('/rooms/free', 'RoomsController@freeRooms');
 Route::get('/rooms/user-reservations', 'RoomsController@userReservations');
+
+
 
 
 Route::get('/reports/', 'reportController@services');

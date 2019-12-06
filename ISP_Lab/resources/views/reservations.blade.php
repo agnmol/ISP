@@ -11,6 +11,7 @@
                 <th>Data iki</th>
                 <th>Kaina</th>
                 <th></th>
+                <th></th>
             </tr>
             @foreach($reservations as $reservation)
             <tr>
@@ -20,7 +21,8 @@
                 <td>{{$reservation->data_nuo}}</td>
                 <td>{{$reservation->data_iki}}</td>
                 <td>{{$reservation->room->kaina}}</td>
-                <td><button onclick="window.location='{{ redirect("confirmReservation") }}'" class="btn">Patvirtinti</button></td>
+                <td><button  onclick="window.location='{{ route("confirmReservation", $reservation->id) }}'" class="btn" {{($reservation->patvirtinta == 1) ? "disabled": ""}}>Patvirtinti</button></td>
+                <td><button onclick="window.location='{{ route('editReservation', $reservation->id) }}'" class="btn">Redaguoti</button></td>
             </tr>
                 @endforeach
         </table>

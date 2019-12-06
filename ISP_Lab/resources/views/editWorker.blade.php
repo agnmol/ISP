@@ -1,9 +1,9 @@
 @extends('mainLayouts.home')
-@include('layouts.workers')
+@include('layouts.rooms')
 @section('right')
     <div id="contentRight">
-        <h2 id="pageTitle">Pridėti darbuotoją</h2>
-        <form method="post" action="{{route('confirmEditWorker', $worker->id)}}">
+        <h2 id="pageTitle">Redaguoti darbuotojo duomenis</h2>
+        <form method="post" action="{{route('confirmEditReservation', $reservation->id)}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="row">
                 <div class="leftcol">

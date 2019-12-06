@@ -23,6 +23,9 @@ class WorkersController extends Controller
         $duties = \App\Duties::all();
         return view('addWorker', compact('people','duties'));
     }
+
+    //Jeigu redaguojamas objektas (id!=null), objektas atnaujinamas duombazėje
+    //Jeigu įterpiamas naujas objektas (id==null), sukuriamas naujas objektas ir išsaugomas duombazėje
     public function insertWorker(Request $request, $id = null)
     {
 

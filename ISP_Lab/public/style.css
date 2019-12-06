@@ -220,6 +220,12 @@ h2#pageTitle {
     cursor: pointer;
 }
 
+.btn:disabled{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
 #filter {
     margin-left: 50px;
     padding-bottom: 20px;
