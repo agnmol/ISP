@@ -10,4 +10,14 @@ class RestaurantController extends Controller
     {
         return view('menu');
     }
+
+    public function add()
+    {
+        return view('addToMenu');
+    }
+
+    public function reserveTable()
+    {
+        return view('tableReservation');
+    }
 }
