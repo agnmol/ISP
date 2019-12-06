@@ -1,6 +1,8 @@
 <?php
 
 Route::get('/', 'LoginController@index');
+Route::post('/login', 'LoginController@login')->name('login');
+Route::post('/register', 'LoginController@register')->name('register');
 Route::get('/register', 'RegisterController@index');
 Route::get('/home', 'HomeController@index');
 
