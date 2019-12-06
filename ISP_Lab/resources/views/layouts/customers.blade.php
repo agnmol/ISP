@@ -4,100 +4,23 @@
 @section('right')
     <div id="contentRight">
         <table id="customers">
+
             <tr>
                 <th>Vardas Pavardė</th>
                 <th>Statusas</th>
             </tr>
+            @foreach($customers as $customer)
             <tr>
-                <td>Alfreds Futterkiste</td>
-                <td class = "select">
+                <td>{{$customer->person->vardas}} {{$customer->person->pavarde}}</td>
+                <td class = "select" onchange="javascript:if (confirm('Ar tikrai norite pakeisti kliento statusą?')) window.location='{{route('editCustomer', $customer->id)}}'">
                     <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
+                        <option value="0" {{($customer->nepageidaujamas == 0) ? "selected": ""}}>Pageidaujamas</option>
+                        <option value="1" {{($customer->nepageidaujamas == 1) ? "selected": ""}}>Nepageidaujamas</option>
+
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Ernst Handel</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Königlich Essen</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>North/South</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Paris spécialités</td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Pageidaujamas</option>
-                        <option value="false">Nepageidaujamas</option>
-                    </select>
-                </td>
-            </tr>
+                @endforeach
         </table>
     </div>
 @endsection

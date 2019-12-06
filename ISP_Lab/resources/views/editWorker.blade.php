@@ -3,14 +3,14 @@
 @section('right')
     <div id="contentRight">
         <h2 id="pageTitle">Pridėti darbuotoją</h2>
-        <form method="post" action="{{route('insertWorker')}}">
+        <form method="post" action="{{route('confirmEditWorker', $worker->id)}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="row">
                 <div class="leftcol">
                     <label for="date">Įsidarbinimo data</label>
                 </div>
                 <div class="rightcol">
-                    <input type="date" id="date" name="date" value="">
+                    <input type="date" id="date" name="date" value="{{$worker->idarbinimo_data}}">
                 </div>
             </div>
             <div class="row">
@@ -18,12 +18,8 @@
                     <label for="person">Asmuo</label>
                 </div>
                 <div class="rightcol">
-                    <select class="field" name="person">
-                        <option value=""></option>
-                        @foreach($people as $person)
-                            <option value="{{$person->id}}">{{$person->vardas}} {{$person->pavarde}}</option>
-                            @endforeach
-                    </select>
+                    <input type="text" name="" value="{{$worker->person->vardas}} {{$worker->person->pavarde}}" readonly>
+                    <input type="text" name="person" value="{{$worker->id}}" hidden>
                 </div>
             </div>
             <div class="row">
@@ -44,7 +40,7 @@
                     <label for="address">Adresas</label>
                 </div>
                 <div class="rightcol">
-                    <input type="text" name="address" value="">
+                    <input type="text" name="address" value="{{$worker->adresas}}">
                 </div>
             </div>
             <div class="row">
@@ -52,7 +48,7 @@
                     <label for="tab">Tabelio nr.</label>
                 </div>
                 <div class="rightcol">
-                    <input type="text" name="tab" value="">
+                    <input type="text" name="tab" value="{{$worker->tab_nr}}">
                 </div>
             </div>
             <div class="row">

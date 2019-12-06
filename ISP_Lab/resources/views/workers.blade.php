@@ -10,143 +10,17 @@
                 <th></th>
                 <th></th>
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Ernst Handel</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Königlich Essen</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-
-            </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Ernst Handel</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Königlich Essen</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>AA000000000</td>
-                <td>pareigos</td>
-                <td><button onclick="window.location='{{ url("workers/worker") }}'" class="btn">Redaguoti</button></td>
-                <td><button class="btn">Naikinti</button></td>
-            </tr>
+            @foreach($workers as $worker)
+                <tr>
+                    <td>{{$worker->person->vardas}} {{$worker->person->pavarde}}</td>
+                    <td>{{$worker->tab_nr}}</td>
+                    <td>{{$worker->duty->name}}</td>
+                    <td><button onclick="window.location='{{ route('editWorker', $worker->id) }}'" class="btn">Redaguoti</button></td>
+                    <td><button class="btn" onclick="javascript:if (confirm('Ar tikrai norite pašalinti darbuotoją?'))
+                                window.location='{{route('deleteWorker', $worker->id)}}' ">Naikinti</button></td>
+                </tr>
+            @endforeach
         </table>
-
     </div>
 @endsection
 

@@ -18,6 +18,24 @@
 </head>
 <body>
 <div id="body">
+    <div class="col-12 col-md-9">
+        @if (\Session::has('success'))
+            <div class="alert alert-success">
+                <p>{!! \Session::get('success') !!}</p>
+            </div>
+        @endif
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <p>jūsų įvedamuose duomenyse yra klaidų:</p>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @yield('content')
+    </div>
     <div id="header">
         <h3 id="slogan">Viešbutis</h3>
     </div>
