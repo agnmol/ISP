@@ -56,18 +56,19 @@
     </div>
     <div id="content">
         <h1 style="text-align: center">Prisijungimas</h1>
-{{--        <form action="" method="post">--}}
+        <form action="{{route('login')}}" method="post">
             <div class="container">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label for="uname"><b>Vartotojo vardas</b></label>
                 <input type="text" placeholder="Įveskite vartotojo vardą" name="uname" required>
 
                 <label for="psw"><b>Slaptažodis</b></label>
                 <input type="password" placeholder="Įveskite slaptažodį" name="psw" required>
 
-                <button onclick="window.location='{{ url("home") }}'" type="submit">Prisijungti</button>
+                <button type="submit">Prisijungti</button>
                 <button onclick="window.location='{{ url("register") }}'" type="submit">Registruotis</button>
             </div>
-{{--        </form>--}}
+        </form>
 
     </div>
     <div id="footer">

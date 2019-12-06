@@ -56,8 +56,9 @@
     </div>
     <div id="content">
         <h1 style="text-align: center">Registracija</h1>
-{{--        <form action="" method="post">--}}
+        <form action="{{route('register')}}" method="post">
             <div class="container">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label for="uname"><b>Prisijungimo vardas</b></label>
                 <input type="text" placeholder="Įveskite prisijungimo vardą" name="uname" required>
 
@@ -83,7 +84,7 @@
                 <input type="date" placeholder="Įveskite gimimo datą" name="date" required>
 
 
-                <button onclick="window.location='{{ url("/") }}'" type="submit">Registruotis</button>
+                <button type="submit">Registruotis</button>
                 <button onclick="window.location='{{ url("/") }}'" type="submit">Grįžti į prisijungimą</button>
 
             </div>
