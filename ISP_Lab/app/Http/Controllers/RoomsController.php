@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\roomReservationMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,10 +31,17 @@ class RoomsController extends Controller
         return view('freeRooms');
     }
 
+    //Darbuotojo id paimamas iš sesijos
     public function confirm($id){
-        $reservation = \App\RoomReservations::find($id)->first();
+        $reservation = \App\RoomReservations::with('room', 'worker', 'customer')->where('id', $id)->first();
         $reservation->patvirtinta = 1;
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        $reservation->darbuotojas = 11;
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         $reservation->save();
+
+        Mail::to('aed29431bf-12e9c4@inbox.mailtrap.io')->send(new roomReservationMail($reservation, false));
+
         return redirect()->back()->with('success', 'Rezervacija patvirtinta');
     }
 
@@ -61,6 +70,7 @@ class RoomsController extends Controller
 
             $reservation->save();
         }
+        Mail::to('aed29431bf-12e9c4@inbox.mailtrap.io')->send(new roomReservationMail($reservation, true));
         return redirect()->route('roomReservations')->with('success', 'Rezervacija sėkmingai redaguota');
     }
 
