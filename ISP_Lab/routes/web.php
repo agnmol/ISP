@@ -10,7 +10,12 @@ Route::get('/customers', 'CustomersController@index');
 Route::get('/customers/edit/{id}', 'CustomersController@edit')->name('editCustomer');
 
 Route::get('/jobs', 'JobsController@index');
-Route::get('/jobs/add', 'JobsController@add');
+Route::get('/jobs/add', 'JobsController@add')->name('newJob');
+Route::get('/jobs/edit/{id}', 'JobsController@edit')->name('editJob');
+Route::post('/jobs/edit/{id}', 'JobsController@editJob')->name('editJobVal');
+Route::get('/jobs/remind/{id}', 'JobsController@sendReminder')->name('jobReminder');
+Route::get('/jobs/delete/{id}', 'JobsController@delete')->name('jobDelete');
+Route::post('/jobs/add', 'JobsController@addJob')->name('jobAdd');
 
 Route::get('/restaurant', 'RestaurantController@index');
 Route::get('/restaurant/add', 'RestaurantController@add');
