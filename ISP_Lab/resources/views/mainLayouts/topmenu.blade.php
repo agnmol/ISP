@@ -9,5 +9,6 @@
         <li><a href="{{route('workers')}}" class="{{Request::is('workers*') ? 'active' : ''}}" title="workers">Darbuotojai</a></li>
         <li><a href="{{url('rooms')}}" class="{{Request::is('rooms*') ? 'active' : ''}}" title="rooms">Kambarių rezervacija</a></li>
         <li><a href="{{url('reports')}}" class="{{Request::is('reports*') ? 'active' : ''}}" title="rooms">Ataskaitos</a></li>
+        <li><a href="{{route('logout')}}" title="rooms">Atsijungti</a></li>
     </ul>
 </div>
