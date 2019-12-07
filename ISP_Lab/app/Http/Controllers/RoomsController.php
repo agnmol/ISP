@@ -35,9 +35,7 @@ class RoomsController extends Controller
     public function confirm($id){
         $reservation = \App\RoomReservations::with('room', 'worker', 'customer')->where('id', $id)->first();
         $reservation->patvirtinta = 1;
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        $reservation->darbuotojas = 11;
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        $reservation->darbuotojas = session('darbuotojas.id');
         $reservation->save();
 
         Mail::to('aed29431bf-12e9c4@inbox.mailtrap.io')->send(new roomReservationMail($reservation, false));

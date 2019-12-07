@@ -10,12 +10,12 @@ class JobsController extends Controller
 {
     public function index()
     {
-        if (session('darbuotojas')->pareigos == 1) {
+        if (session('darbuotojas.pareigos') == 1) {
           $jobs = \App\Jobs::with('worker')->where('vykdomas', 1)->get();
           $workers = \App\Workers::where('atleistas', 0)->get();
           return view('allJobs', compact('jobs', 'workers'));
         } else {
-          $jobs = \App\Jobs::with('worker')->where('vykdomas', 1)->where('atlieka', session('darbuotojas')->id)->get();
+          $jobs = \App\Jobs::with('worker')->where('vykdomas', 1)->where('atlieka', session('darbuotojas.id'))->get();
           return view('allJobs', compact('jobs'));
         }
     }
@@ -30,7 +30,7 @@ class JobsController extends Controller
       $job->pavadinimas = $request->input('name');
       $job->aprasymas = $request->input('about');
       $job->data = $request->input('date');
-      $job->priskyre = session('darbuotojas')->id;
+      $job->priskyre = session('darbuotojas.id');
       $job->vykdomas = 1;
       $job->save();
       return redirect()->back()->with('success', 'Darbas pridėtas');
