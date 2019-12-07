@@ -12,7 +12,9 @@ class RoomsController extends Controller
 {
     public function index()
     {
-        return view('rooms');
+        if(session('darbuotojas') != null && session('darbuotojas.atleistas') != 1)
+            return redirect()->route('roomReservations');
+        else return view('rooms');
     }
 
     public function reservations()
