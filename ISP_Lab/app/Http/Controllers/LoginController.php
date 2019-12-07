@@ -18,7 +18,7 @@ class LoginController extends Controller
       if (isset($user)) {
         $usr = \App\Workers::with('person')->where('asmuo',$user->id)->first();
         if (isset($usr)){
-          session(['asmuo' => $usr]);
+          session(['darbuotojas' => $usr]);
           return view('mainLayouts.home');
         }
         $usr = \App\Customers::with('person')->where('asmuo',$user->id)->first();

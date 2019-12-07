@@ -1,6 +1,8 @@
 <div id="topMenu">
     <ul>
+        @if (Session::has('darbuotojas') && Session::get('darbuotojas')->atleistas == 0)
         <li><a href="{{url('jobs')}}" class="{{Request::is('jobs*') || Request::is('/') ? 'active' : ''}}" title="jobs">Darbai</a></li>
+        @endif
         <li><a href="{{url('customers')}}" class="{{Request::is('customers*') ? 'active' : ''}}" title="customers">Klientai</a></li>
         <li><a href="{{url('restaurant')}}" class="{{Request::is('restaurant*') ? 'active' : ''}}" title="restaurant">Restoranas</a></li>
         <li><a href="{{url('services')}}" class="{{Request::is('services*') ? 'active' : ''}}" title="services">Paslaugos</a></li>

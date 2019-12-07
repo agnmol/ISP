@@ -5,142 +5,30 @@
         <table id="customers">
             <tr>
                 <th>Darbas</th>
-                <th>Užsakymo laikas</th>
+                <th>Atlikti iki</th>
                 <th>Priskirtas</th>
+                @if (Session::get('darbuotojas')->pareigos == 1)
                 <th></th>
                 <th></th>
                 <th></th>
+                @endif
             </tr>
+            @foreach($jobs as $job)
             <tr>
-                <td>Alfreds Futterkiste</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
+                <td>{{$job->pavadinimas}}</td>
+                <td><a>{{$job->data}}</a></td>
+                @if (isset($job->worker))
+                <td>{{$job->worker->tab_nr}}</td>
+                @else
+                <td></td>
+                @endif
+                @if (Session::get('darbuotojas')->pareigos == 1)
+                <td><button class="btn" onclick="window.location='{{route('jobDelete', $job->id)}}'">Baigtas</button></td>
+                <td><button class="btn" onclick="window.location='{{route('jobReminder', $job->id)}}'">Siųsti priminimą</button></td>
+                <td><button class="btn" onclick="window.location='{{route('editJob', $job->id)}}'">Redaguoti</button></td>
+                @endif
             </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>Ernst Handel</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>Königlich Essen</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>North/South</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
-            <tr>
-                <td>Paris spécialités</td>
-                <td><a>00:00</a></td>
-                <td class = "select">
-                    <select>
-                        <option value="true">Darbuotojas1</option>
-                        <option value="false">Darbuotojas2</option>
-                    </select>
-                </td>
-                <td><button class="btn">Baigtas</button></td>
-                <td><button class="btn">Siųsti priminimą</button></td>
-                <td><button class="btn">Redaguoti</button></td>
-            </tr>
+            @endforeach
         </table>
     </div>
 @endsection
