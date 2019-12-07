@@ -12,5 +12,6 @@
             <li><a href="{{url('services')}}" class="{{Request::is('services*') ? 'active' : ''}}" title="services">Paslaugos</a></li>
             <li><a href="{{url('rooms')}}" class="{{Request::is('rooms*') ? 'active' : ''}}" title="rooms">Kambarių rezervacija</a></li>
         @endif
+        <li><a href="{{route('logout')}}" title="rooms">Atsijungti</a></li>
     </ul>
 </div>

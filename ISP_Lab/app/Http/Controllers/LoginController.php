@@ -19,15 +19,15 @@ class LoginController extends Controller
         $usr = \App\Workers::with('person')->where('asmuo',$user->id)->first();
         if (isset($usr)){
           session(['darbuotojas' => $usr]);
-          return view('mainLayouts.home');
+          return redirect('/home');
         }
         $usr = \App\Customers::with('person')->where('asmuo',$user->id)->first();
         if (isset($usr)){
           session(['asmuo' => $usr]);
-          return view('mainLayouts.home');
+          return redirect('/home');
         }
       }
-      return view('mainLayouts.login');
+      return redirect('/');
     }
     public function register(Request $request)
     {
@@ -74,5 +74,9 @@ class LoginController extends Controller
       $klientas = \App\Customers::with('person')->where('asmuo', $asmuo-id)->first();
       session(['asmuo' => $klientas]);
       return view('mainLayouts.home');
+    }
+    public function logOut(){
+      session()->flush();
+      return redirect('/');
     }
 }
