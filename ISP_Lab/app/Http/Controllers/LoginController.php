@@ -23,7 +23,7 @@ class LoginController extends Controller
         }
         $usr = \App\Customers::with('person')->where('asmuo',$user->id)->first();
         if (isset($usr)){
-          session(['asmuo' => $usr]);
+          session(['klientas' => $usr]);
           return redirect('/home');
         }
       }
@@ -72,7 +72,7 @@ class LoginController extends Controller
       $klientas->asmuo = $asmuo->id;
       $klientas->save();
       $klientas = \App\Customers::with('person')->where('asmuo', $asmuo-id)->first();
-      session(['asmuo' => $klientas]);
+      session(['klientas' => $klientas]);
       return view('mainLayouts.home');
     }
     public function logOut(){
