@@ -1,193 +1,108 @@
 @extends('mainLayouts.home')
 @include('layouts.rooms')
 @section('right')
-        <div id="contentRight">
-        <div id="data">
-            <h2> data: </h2>
+    <div id="contentRight">
+        <form action="" method="GET">
+            <div id="filter">
+                    <h2> data nuo: </h2>
+                <input type="date" name="dataNuo">
+             </div>
 
-            <select>
-                <option value="true">Data1</option>
-                <option value="false">Data2</option>
-            </select>
 
-        </div>
-        <div id="filter">
-        <h2> filtrai: </h2>
+            <div id="filter">
+                    <h2> data iki: </h2>
+                <input type="date" name="dataIki">
+            </div>
 
-            <select>
-                <option value="true">Filtras1</option>
-                <option value="false">Filtras1</option>
-            </select>
-            <select>
-                <option value="true">Filtras2</option>
-                <option value="false">Filtras2</option>
-            </select>
-        </div>
+                <div id="filter">
+                    <h2> Kainos filtras (<=): </h2>
+                    <input type="number" step="0.01" name="filtras">
+                </div>
+                <div id="contentLeft">
+                    <input type="submit" value=" Pateikti " class="btn">
+                </div>
+        </form>
 
-            <button type="button">Ieškoti</button>
-        <table id="customers">
-            <tr>
-                <th>Kambario tipas</th>
-                <th>Kaina</th>
-                <th>Balkonas</th>
-                <th>Rūkančiųjų zonoje</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                <br><br><br><br><br><br><br>
+        <table id="customers">;
+                    <?php
+                    $db = mysqli_connect("localhost", "root", "", "isp");
+                    if(isset($_GET['dataNuo']) &&  isset($_GET['dataIki']) && isset($_GET['filtras'])){
+                        if($_GET['dataNuo'] == NULL){
+                            echo "Įveskite datą nuo";
+                            echo "<br>";
+                        }
+                        else if($_GET['dataIki'] == NULL){
+                            echo "Įveskite datą iki";
+                            echo "<br>";
+                        }
+                        else if($_GET['filtras'] == NULL){
+                            echo "Įveskite filtrą" ;
+                            echo "<br>";
+                        }
+                        else {
+                            echo " <tr>
+                        <th>Kambario tipas</th>
+                        <th>Kaina</th>
+                        <th>Balkonas</th>
+                        <th>Rūkančiųjų zonoje</th>
+                        <th></th>
+                                   </tr>";
+                            $norimaNuo = $_GET['dataNuo'];
+                            $norimaIki = $_GET['dataIki'];
+                            $filtras = $_GET['filtras'];
+                            $klientoid = session('klientas.id');
+                            $sql = "SELECT dydis, kaina, balkonas, rukanciu_zonoje, id FROM kambariai";
+                            $result = mysqli_query($db, $sql);
 
-            </tr>
-            <tr>
-                <td>Ernst Handel</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                            while($rows = mysqli_fetch_assoc($result)){
+                                $id = $rows['id'];
+                                if($rows['kaina'] <= $filtras) {
+                                    $sql2 = "SELECT data_nuo, data_iki, id, kambarys FROM kambariu_rezervacijos WHERE kambarys = '".$rows['id']."'";
+                                   // echo $sql2;
+                                 //   exit;
+                                    $result2 = mysqli_query($db, $sql2);
+                                    $uzimtas = FALSE;
+                                    while($rows2 = mysqli_fetch_assoc($result2)){
+                                        if($rows2['data_nuo'] >= $norimaIki || $rows2['data_iki'] <= $norimaNuo){
 
-            </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                                                continue;
 
-            </tr>
-            <tr>
-                <td>Königlich Essen</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                                        }
+                                        else {
+                                            $uzimtas = TRUE;
+                                        }
 
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                                }
+                                if(!$uzimtas) {
+                                    $sql3 = "SELECT id, name FROM kambariu_dydziai WHERE id = ".$rows['dydis'];
+                                    $row = mysqli_fetch_row(mysqli_query($db, $sql3));
+                                    echo "<tr>";
+                                    echo "<td>".$row[1]. "</td>";
+                                    echo "<td>".$rows['kaina']. "</td>";
+                                    if($rows['balkonas'] == 0)
+                                        echo "<td>Ne</td>";
+                                    else
+                                        echo "<td>Taip</td>";
+                                    if($rows['rukanciu_zonoje'] == 0)
+                                        echo "<td>Ne</td>";
+                                    else
+                                        echo "<td>Taip</td>";
+                                    echo "<td><a href=\"rooms/user-reserve?id=$id&nuo=$norimaNuo&iki=$norimaIki&klientoid=$klientoid\" class=\"btn\">Rezervuoti</a></td>";
+                                    echo "</tr>";
+                                    }
+                            }
+                        }
+                        }
+                    }
 
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
 
-            </tr>
 
-            </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
 
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                    ?>
 
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
+                </table>
 
-            </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-            <tr>
-                <td>Ernst Handel</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-            <tr>
-                <td>Königlich Essen</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Rezervuoti</button></td>
-
-            </tr>
-        </table>
-
-    </div>
+            </div>
 @endsection
 
