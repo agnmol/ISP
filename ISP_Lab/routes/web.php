@@ -45,7 +45,10 @@ Route::get('/rooms/reservations/edit/{id}', 'RoomsController@editReservation')->
 Route::post('/rooms/reservations/edit/confirm/{id}', 'RoomsController@confirmEditReservation')->name('confirmEditReservation');
 Route::get('/rooms/reservations/confirm/{id}', 'RoomsController@confirm')->name('confirmReservation');
 //Route::get('/rooms/free', 'RoomsController@freeRooms');
+Route::get('/rooms/user-rate', 'RoomsController@userRate');
 Route::get('/rooms/user-reservations', 'RoomsController@userReservations');
+Route::get('/rooms/user-reservations-delete', 'RoomsController@userReservationsDelete');
+Route::get('/rooms/user-reserve', 'RoomsController@userReserve');
 
 
 

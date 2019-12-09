@@ -4,39 +4,40 @@
     <div id="contentRight">
         <table id="customers">
             <tr>
-                <th>Kambario tipas</th>
+                <th>Data Nuo</th>
+                <th>Data Iki</th>
+                <th>Tipas</th>
                 <th>Kaina</th>
-                <th>Balkonas</th>
-                <th>Rūkančiųjų zonoje</th>
-                <th></th>
-                <th></th>
+                <th>Įvertinti</th>
+                <th>Šalinti</th>
 
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
-                <td><button onclick="" class="btn">Šalinti</button></td>
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
-                <td><button onclick="" class="btn">Šalinti</button></td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>100000</td>
-                <td>taip</td>
-                <td>ne</td>
-                <td><button onclick="" class="btn">Įvertinti</button></td>
-                <td><button onclick="" class="btn">Šalinti</button></td>
+            <?php
+            $db = mysqli_connect("localhost", "root", "", "isp");
+            $sql3 = "SELECT data_nuo, data_iki, kambarys, id FROM kambariu_rezervacijos WHERE klientas ='".session('klientas.id')."'";
+            $result = mysqli_query($db, $sql3);
+            while ($rows = mysqli_fetch_assoc($result))
+            {
 
-            </tr>
+
+                $sql = "SELECT dydis, kaina, balkonas, rukanciu_zonoje FROM kambariai WHERE id = '".$rows['kambarys']."'";
+                $row = mysqli_fetch_row(mysqli_query($db, $sql));
+                $sql2 = "SELECT id, name FROM kambariu_dydziai WHERE id = '".$row[0]."'";
+                $row2 = mysqli_fetch_row(mysqli_query($db, $sql2));
+                $id = $rows['id'];
+                echo "<tr>";
+                //echo "<td>".$row[1]. "</td>";
+                echo "<td>".$rows['data_nuo']. "</td>";
+                echo "<td>".$rows['data_iki']. "</td>";
+                echo "<td>".$row2[1]. "</td>";
+                echo "<td>".$row[1]."</td>";
+                echo "<td><a href=\"user-rate?id=$id\" class=\"btn\">Įvertinti</a></td>";
+                echo "<td><a href=\"user-reservations-delete?id=$id\" class=\"btn\">Šalinti</a></td>";
+                echo "</tr>";
+
+            }
+
+            ?>
 
         </table>
 

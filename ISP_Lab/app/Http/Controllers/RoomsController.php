@@ -23,6 +23,21 @@ class RoomsController extends Controller
         return view('reservations', compact('reservations'));
     }
 
+    public function userReservationsDelete()
+    {
+        return view('userReservationsDelete');
+    }
+
+    public function userReserve()
+    {
+        return view('userReserve');
+    }
+
+    public function userRate()
+    {
+        return view('userRate');
+    }
+
     public function userReservations()
     {
         return view('userRoomsReservations');
