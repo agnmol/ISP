@@ -20,6 +20,12 @@
 
 
         while ($group = mysqli_fetch_assoc($groups)){
+            $sql = "SELECT * FROM meniu_gaminiai where grupe = ".$group['id'];
+            $meniu_gaminiai = mysqli_query($db, $sql);
+            if (mysqli_num_rows($meniu_gaminiai) < 1){
+                continue;
+            }
+
             echo "<h2 id=\"pageTitle\">".$group['pavadinimas']."</h2>";
             echo "<table id=\"customers\" style='width:750px'>";
             if ($superUser == 1){
@@ -31,8 +37,7 @@
             else
                 $header = $header."<th>Vertinimas</th>";
             echo $header."</tr>";
-            $sql = "SELECT * FROM meniu_gaminiai where grupe = ".$group['id'];
-            $meniu_gaminiai = mysqli_query($db, $sql);
+
             if (mysqli_num_rows($meniu_gaminiai) < 1){
                 echo "<tr><td colspan='7'>Šioje meniu grupėje nėra jokių gaminių.</td></tr>";
             }
