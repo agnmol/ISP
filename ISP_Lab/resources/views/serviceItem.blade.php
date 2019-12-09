@@ -3,19 +3,19 @@
 @section('right')
     <div id="contentRight">
         <?php
-        $superUser = 0;
-        if ((Session::has('darbuotojas') && Session('darbuotojas.atleistas') == 0) || Session::has('administratorius'))
-            $superUser = 1;
+            $superUser = 0;
+            if ((Session::has('darbuotojas') && Session('darbuotojas.atleistas') == 0) || Session::has('administratorius'))
+                $superUser = 1;
 
-        $path = "/ISP/ISP_Lab/public/index.php";
-        $db=mysqli_connect("localhost", "root", "", "isp");
-        if (isset($groupId)){
-            $sql = "SELECT * FROM grupes where id = ".$groupId;
-        }
-        else{
-            $sql = "SELECT * FROM grupes";
-        }
-        $groups = mysqli_query($db, $sql);
+            $path = "/ISP/ISP_Lab/public/index.php";
+            $db=mysqli_connect("localhost", "root", "", "isp");
+            if (isset($groupId)){
+                $sql = "SELECT * FROM grupes where id = ".$groupId;
+            }
+            else{
+                $sql = "SELECT * FROM grupes";
+            }
+            $groups = mysqli_query($db, $sql);
 
 
 
@@ -26,15 +26,15 @@
                 echo "<h2 id=\"pageTitle\">".$group['pavadinimas']."</h2>";
                 echo "<table id=\"customers\" style='width:750px'>";
 
-            /*if ($superUser == 1){
+                /*if ($superUser == 1){
 
-            }*/
-            $header = "<tr><th>Pavadinimas</th><th>Aprašymas</th><th>Kaina</th>";
-            if ($superUser)
-                $header = $header."<th>Redagavimas</th><th>Šalinimas</th>";
-            else
-                $header = $header."<th>Užsakymas</th>";
-            echo $header."</tr>";
+                }*/
+                $header = "<tr><th>Pavadinimas</th><th>Aprašymas</th><th>Kaina</th>";
+                if ($superUser)
+                    $header = $header."<th>Redagavimas</th><th>Šalinimas</th>";
+                else
+                    $header = $header."<th>Užsakymas</th>";
+                echo $header."</tr>";
 
                 while ($paslauga = mysqli_fetch_assoc($paslaugos)){
                     $meniuData = "<tr><td>".$paslauga['pavadinimas']."</td><td>";

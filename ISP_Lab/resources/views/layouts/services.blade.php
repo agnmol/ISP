@@ -4,10 +4,29 @@
         <ul>
             <li><a href="{{url('services')}}" class="{{Request::is('services') ? 'active' : ''}}">Visos paslaugos</a></li>
             <ul>
-                <li><a href="{{url('services/group')}}" class="{{Request::is('services/group') ? 'active' : ''}}">1 grupė</a></li>
-                <li><a href="{{url('services/group2')}}" class="{{Request::is('services/group2') ? 'active' : ''}}">2 grupė</a></li>
+                @php
+                    $superUser = 0;
+                    if ((Session::has('darbuotojas') && Session('darbuotojas.atleistas') == 0) || Session::has('administratorius'))
+                        $superUser = 1;
+
+                    $path = "/ISP/ISP_Lab/public/index.php";
+                    $db=mysqli_connect("localhost", "root", "", "isp");
+                    $sql = "SELECT * FROM grupes";
+                    $result = mysqli_query($db, $sql);
+                    while ($row = mysqli_fetch_assoc($result)){
+                        $sql = "SELECT * FROM paslaugos where grupe = ".$row['id'];
+                        $paslaugos = mysqli_query($db, $sql);
+                        if (mysqli_num_rows($paslaugos) > 0)
+                        {
+                            echo "<li><a href=\"".$path."/services/".$row['id']."\" class=\"{{Request::is('restaurant') ? 'active' : ''}}\">".$row['pavadinimas']."</a></li>";
+                        }
+                    }
+                @endphp
             </ul>
-            <li><a href="{{url('services/add')}}" class="{{Request::is('services/add') ? 'active' : ''}}">Pridėti paslaugą</a></li>
+            @php
+            if($superUser==1)
+            echo "<li><a href=\"{{url('services/add')}}\" class=\"{{Request::is('services/add') ? 'active' : ''}}\">Pridėti paslaugą</a></li>\"";
+            @endphp
             <li><a href="{{url('services/booked')}}" class="{{Request::is('services/booked') ? 'active' : ''}}">Užsakytos paslaugos</a></li>
         </ul>
     </div>

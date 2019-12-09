@@ -29,8 +29,12 @@ Route::get('/restaurant/remove/{id}', 'RestaurantController@removeMenuItem');
 Route::get('/services', 'ServicesController@index');
 Route::get('/services/add', 'ServicesController@add');
 Route::get('/services/booked', 'ServicesController@booked');
-Route::get('/services/group', 'ServicesController@group1');
-Route::get('/services/group2', 'ServicesController@group2');
+//Route::get('/services/group', 'ServicesController@group1');
+//Route::get('/services/group2', 'ServicesController@group2');
+Route::get('/services/{id}', 'ServicesController@showService');
+Route::get('/services/remove/{id}', 'ServicesController@removeService');
+Route::get('/services/edit/{id}', 'ServicesController@editService');
+Route::get('/services/order/{id}', 'ServicesController@orderService');
 
 Route::get('/workers', 'WorkersController@index')->name('workers');
 Route::get('/workers/add', 'WorkersController@addWorker')->name('addWorker');
