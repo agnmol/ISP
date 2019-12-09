@@ -21,6 +21,10 @@ Route::post('/jobs/add', 'JobsController@addJob')->name('jobAdd');
 Route::get('/restaurant', 'RestaurantController@index');
 Route::get('/restaurant/add', 'RestaurantController@add');
 Route::get('/restaurant/book', 'RestaurantController@reserveTable');
+Route::get('/restaurant/{id}', 'RestaurantController@groupMenu');
+Route::get('/restaurant/rate/{id}', 'RestaurantController@rateMenuItem');
+Route::get('/restaurant/edit/{id}', 'RestaurantController@editMenuItem');
+Route::get('/restaurant/remove/{id}', 'RestaurantController@removeMenuItem');
 
 Route::get('/services', 'ServicesController@index');
 Route::get('/services/add', 'ServicesController@add');

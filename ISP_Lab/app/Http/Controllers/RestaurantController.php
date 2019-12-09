@@ -20,4 +20,22 @@ class RestaurantController extends Controller
     {
         return view('tableReservation');
     }
+
+    public function groupMenu($id){
+        return view('menu')->with('groupId', $id);
+    }
+
+    public function rateMenuItem($id){
+        return view('rateMenuItem')->with('menuItemId', $id);
+    }
+
+
+    public function editMenuItem($id){
+        return view('editMenuItem')->with('menuItemId', $id);
+    }
+
+    public function removeMenuItem($id){
+        return view('removeMenuItem')->with('menuItemId', $id);
+    }
+
 }
