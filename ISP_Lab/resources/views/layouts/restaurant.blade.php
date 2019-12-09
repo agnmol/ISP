@@ -14,6 +14,11 @@
                 $sql = "SELECT * FROM grupes";
                 $result = mysqli_query($db, $sql);
                 while ($row = mysqli_fetch_assoc($result)){
+                    $sql = "SELECT * FROM meniu_gaminiai where grupe = ".$row['id'];
+                    $meniu_gaminiai = mysqli_query($db, $sql);
+                    if (mysqli_num_rows($meniu_gaminiai) < 1){
+                        continue;
+                    }
                     //echo "<li><a href=\"{{url('restaurant//".$row['id']."')}}\" class=\"{{Request::is('restaurant') ? 'active' : ''}}\">".$row['pavadinimas']."</a></li>";
                     echo "<li><a href=\"".$path."/restaurant/".$row['id']."\" class=\"{{Request::is('restaurant') ? 'active' : ''}}\">".$row['pavadinimas']."</a></li>";
                 }
