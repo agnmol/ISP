@@ -13,7 +13,7 @@ class reportController extends Controller
 
     public function services()
     {
-        return view('servicesReport');
+        return view('reservationsReport');
     }
 
     public function reservations()

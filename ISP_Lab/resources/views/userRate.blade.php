@@ -10,7 +10,7 @@
             $sql = "SELECT id FROM kambariu_rezervacijos WHERE id = '".$idGautas."'";
             $result = mysqli_query($db, $sql);
             $row = mysqli_fetch_row($result);
-            echo $row[0];
+            //echo $row[0];
         }
         ?>
         <form action="" method="GET">
@@ -29,7 +29,7 @@
                  $id = $_GET['idy'];
                  $komentaras = $_GET['newKomentaras'];
                  $sql = "UPDATE kambariu_rezervacijos SET komentaras = '".$komentaras."' WHERE kambariu_rezervacijos.id = '".$id."'";
-                 echo $sql;
+                 //echo $sql;
                  $result = mysqli_query($db, $sql);
                  header("Location: " . URL::to('/rooms/user-reservations'), true, 302);
                  exit();
