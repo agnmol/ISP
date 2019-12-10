@@ -23,10 +23,9 @@
                     }
                 @endphp
             </ul>
-            @php
-            if($superUser==1)
-            echo "<li><a href=\"{{url('services/add')}}\" class=\"{{Request::is('services/add') ? 'active' : ''}}\">Pridėti paslaugą</a></li>\"";
-            @endphp
+            @if($superUser==1)
+            <li><a href="{{url('services/add')}}" class="{{Request::is('services/add') ? 'active' : ''}}">Pridėti paslaugą</a></li>
+            @endif
             <li><a href="{{url('services/booked')}}" class="{{Request::is('services/booked') ? 'active' : ''}}">Užsakytos paslaugos</a></li>
         </ul>
     </div>
